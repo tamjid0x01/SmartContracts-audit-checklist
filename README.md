@@ -334,6 +334,7 @@ contracts/WhitePaperInterestRateModel.sol:68:        return ur.mul(multiplierPer
 
 ## Resources
 
+- [The Repository this list was largely sourced from](https://github.com/Rari-Capital/solcurity)
 - [Smart contract best pracitices](https://github.com/ConsenSys/smart-contract-best-practices)
 - [Solidity idiosyncrasies](https://github.com/miguelmota/solidity-idiosyncrasies)
 - [Solidity security considerations](http://solidity.readthedocs.io/en/develop/security-considerations.html)
