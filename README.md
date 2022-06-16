@@ -223,7 +223,114 @@ Not all listed items will apply to your specific smart contract.
 - [ ] `D11` - If your contract is a target for token approvals, do not make arbitrary calls from user input.
 
 
+## some helpers before audit
 
+  #### SLoc ([cloc](https://github.com/AlDanial/cloc#install-via-package-manager))
+  
+  ```bash
+  $ cloc */
+        86 text files.
+      86 unique files.
+       1 file ignored.
+
+github.com/AlDanial/cloc v 1.82  T=0.24 s (354.5 files/s, 86952.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Solidity                        72           3027           6000          10274
+TypeScript                      13            223             86           1239
+-------------------------------------------------------------------------------
+SUM:                            85           3250           6086          11513
+-------------------------------------------------------------------------------
+  
+  ```
+  
+  #### number of solidity  files  
+  ```bash
+  $ find . -name '*.sol' | wc -l
+  72
+  
+  ```
+  #### Lines of code per solidity file
+  ```bash
+  $ find . -name '*.sol' | xargs wc -l
+     137 ./contracts/BaseJumpRateModelV2.sol
+    84 ./contracts/CarefulMath.sol
+   208 ./contracts/CDaiDelegate.sol
+   237 ./contracts/CErc20.sol
+    43 ./contracts/CErc20Delegate.sol
+   476 ./contracts/CErc20Delegator.sol
+    39 ./contracts/CErc20Immutable.sol
+   190 ./contracts/CEther.sol
+...
+    53 ./contracts/Oracles/uniswapv2/IUniswapV2Pair.sol
+   179 ./contracts/Oracles/UniswapV2PriceOracle.sol
+    16 ./contracts/PriceOracle.sol
+    42 ./contracts/PriceOracleImplementation.sol
+   100 ./contracts/Reservoir.sol
+   186 ./contracts/SafeMath.sol
+    33 ./contracts/SimpleNftPriceOracle.sol
+    37 ./contracts/SimplePriceOracle.sol
+   110 ./contracts/Timelock.sol
+   148 ./contracts/Unitroller.sol
+    85 ./contracts/WhitePaperInterestRateModel.sol
+ 19293 total
+  
+  ```
+  
+  #### SHA256 hash of files
+  
+  ```bash
+  
+$ shasum -a 256 contracts/*.sol 
+32111c1b2bcdb051fa5c2564cd2a5e0662e699472ca5373499f67dca9c71cf47  contracts/BaseJumpRateModelV2.sol
+c98ee33d13672016db21d4d6353b45eccb5c9f77499df77c254574a0481c0c03  contracts/CDaiDelegate.sol
+fec5e373f98c6f178835fc6ef86bee04c765d8f87b264d7e3d6245dd835250ac  contracts/CErc20.sol
+9e4f5b92705c66f910bd0c38600bede344b592f1655a07e63a6ecfad45275a3b  contracts/CErc20Delegate.sol
+525e15dac623328c8c5cc9591be4fc7b5af85fdb96496ac3569201b63c26614b  contracts/CErc20Delegator.sol
+6689cb8083354cf98dcfc49d00274046a205696451ab6df13ef3c28285c39052  contracts/CErc20Immutable.sol
+dc69e8e2a24e9f7239849fb2e8c0777a21ca96320f7e63b548a1bf544b939c4d  contracts/CEther.sol
+650bdf61c685b50b3f016553f822c35b4c605a0c477791b35f3de0a7cb61d390  contracts/CNft.sol
+
+...
+
+204a19fb7a661c5bafcd5f7916254a457ca1fd9104e5708a73dd5010b11353dc  contracts/SafeMath.sol
+37dd3c09e5343bc9ca1b62ba8b8d74ddadd2214123e3dcf102a4cb0d60f672bb  contracts/SimpleNftPriceOracle.sol
+d3bb4552a276f8063d85c5de8ac5431eea8a254226b2ca5964b0af4377bc4173  contracts/SimplePriceOracle.sol
+ea4204fc8c5c72a5f4984177c209a16be5d538f1a3ee826744c901c21d27e382  contracts/Timelock.sol
+a56f8cf884f0bceb918bbb078aaa5cd3ef90002323787729d70fdee6b4a1c602  contracts/Unitroller.sol
+b5d06e0d725b01ecb8d0b88aa89300ddc0399904d84915a311f42f96970ba997  contracts/WhitePaperInterestRateModel.sol
+  
+  ```
+  
+  #### some of external calls in solidity files
+  
+  ```bash
+  
+  $ egrep '\.\w*\(.*\)' contracts/* -nr
+  contracts/BaseJumpRateModelV2.sol:85:        return borrows.mul(1e18).div(cash.add(borrows).sub(reserves));
+contracts/BaseJumpRateModelV2.sol:99:            return util.mul(multiplierPerBlock).div(1e18).add(baseRatePerBlock);
+contracts/BaseJumpRateModelV2.sol:101:            uint normalRate = kink.mul(multiplierPerBlock).div(1e18).add(baseRatePerBlock);
+contracts/BaseJumpRateModelV2.sol:102:            uint excessUtil = util.sub(kink);
+contracts/BaseJumpRateModelV2.sol:103:            return excessUtil.mul(jumpMultiplierPerBlock).div(1e18).add(normalRate);
+contracts/BaseJumpRateModelV2.sol:116:        uint oneMinusReserveFactor = uint(1e18).sub(reserveFactorMantissa);
+contracts/BaseJumpRateModelV2.sol:118:        uint rateToPool = borrowRate.mul(oneMinusReserveFactor).div(1e18);
+
+...
+
+contracts/Timelock.sol:64:        bytes32 txHash = keccak256(abi.encode(target, value, signature, data, eta));
+contracts/Timelock.sol:74:        bytes32 txHash = keccak256(abi.encode(target, value, signature, data, eta));
+contracts/Timelock.sol:83:        bytes32 txHash = keccak256(abi.encode(target, value, signature, data, eta));
+contracts/Timelock.sol:86:        require(getBlockTimestamp() <= eta.add(GRACE_PERIOD), "Timelock::executeTransaction: Transaction is stale.");
+contracts/Timelock.sol:95:            callData = abi.encodePacked(bytes4(keccak256(bytes(signature))), data);
+contracts/Timelock.sol:99:        (bool success, bytes memory returnData) = target.call.value(value)(callData);
+contracts/Unitroller.sol:137:        (bool success, ) = comptrollerImplementation.delegatecall(msg.data);
+contracts/WhitePaperInterestRateModel.sol:37:        baseRatePerBlock = baseRatePerYear.div(blocksPerYear);
+contracts/WhitePaperInterestRateModel.sol:38:        multiplierPerBlock = multiplierPerYear.div(blocksPerYear);
+contracts/WhitePaperInterestRateModel.sol:56:        return borrows.mul(1e18).div(cash.add(borrows).sub(reserves));
+contracts/WhitePaperInterestRateModel.sol:68:        return ur.mul(multiplierPerBlock).div(1e18).add(baseRatePerBlock);
+  
+  ```
 
 ## Resources
 
