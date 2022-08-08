@@ -331,6 +331,12 @@ contracts/WhitePaperInterestRateModel.sol:56:        return borrows.mul(1e18).di
 contracts/WhitePaperInterestRateModel.sol:68:        return ur.mul(multiplierPerBlock).div(1e18).add(baseRatePerBlock);
   
   ```
+## Platform
+Some Platform here that you can do Smart Contracts audits and get large $ bounty. 
+
+- [code4rena](https://code4rena.com/)
+- [HATS.FINANCE](https://hats.finance/)
+- [immunefi](https://immunefi.com/)
 
 ## Resources
 
