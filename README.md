@@ -321,6 +321,25 @@ Some Platform here that you can do Smart Contracts audits and get large $ bounty
 - [Immunefi](https://immunefi.com/)
 - [Sherlock](https://app.sherlock.xyz/audits/contests)
 
+## List of Public SmartContracts Audits Reports
+I've mentioned here some public audits reports for learn audits. So, lets enjoy reading some cool audits reports.
+
+- [Consensys](https://consensys.net)  : [Reports](https://consensys.net/diligence/audits/)
+- [Peckshield](https://peckshield.com)  : [Reports](https://peckshield.com/#report)
+- [Openzeppelin](https://openzeppelin.com)  : [Reports](https://blog.openzeppelin.com/security-audits/)
+- [TrailofBits](https://www.trailofbits.com)  : [Reports](https://github.com/trailofbits/publications)
+- [Quillhash]()  : [Reports](https://audits.quillhash.com/audits)
+- [Hacken](https://hacken.io/)  : [Reports](https://hacken.io/audits/)
+- [Beosin](https://beosin.com)  : [Reports](https://beosin.com/#/index/research)
+- [Iosiro](https://iosiro.com)  : [Reports](https://iosiro.com/audits)
+- [Oak Security](http://oaksecurity.io)  : [Reports](https://github.com/oak-security/audit-reports)
+- [G0 group](https://github.com/g0-group)  : [Reports](https://github.com/g0-group/Audits)
+- [Hexens](https://hexens.io)  : [Reports](https://hexens.io/audits)
+- [Sherlock](https://sherlock.xyz)  : [Reports](https://app.sherlock.xyz/audits/contests)
+- [Code4rena](https://code4rena.com)  : [Reports](https://code4rena.com/reports/)
+
+
+
 ## Resources
 - [Solidity Code Metrics By Consensys Diligence](https://github.com/ConsenSys/solidity-metrics)
 - [The Repository this list was largely sourced from](https://github.com/Rari-Capital/solcurity)
