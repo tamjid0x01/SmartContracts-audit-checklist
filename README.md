@@ -345,6 +345,7 @@ I've mentioned here some public audits reports for learn audits. So, lets enjoy 
 - [The Repository this list was largely sourced from](https://github.com/Rari-Capital/solcurity)
 - [Blockchain Security Audit List](https://github.com/0xNazgul/Blockchain-Security-Audit-List)
 - [Smart contract best pracitices](https://github.com/ConsenSys/smart-contract-best-practices)
+- [Smart Contract Auditing Heuristics](https://github.com/OpenCoreCH/smart-contract-auditing-heuristics)
 - [Solidity idiosyncrasies](https://github.com/miguelmota/solidity-idiosyncrasies)
 - [Solidity security considerations](http://solidity.readthedocs.io/en/develop/security-considerations.html)
 - [Methodological security review of a smart contract](https://ethereum.stackexchange.com/questions/8551/methodological-security-review-of-a-smart-contract)
