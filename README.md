@@ -343,6 +343,7 @@ I've mentioned here some public audits reports for learn audits. So, lets enjoy 
 ## Resources
 - [Solidity Code Metrics By Consensys Diligence](https://github.com/ConsenSys/solidity-metrics)
 - [The Repository this list was largely sourced from](https://github.com/Rari-Capital/solcurity)
+- [Blockchain Security Audit List](https://github.com/0xNazgul/Blockchain-Security-Audit-List)
 - [Smart contract best pracitices](https://github.com/ConsenSys/smart-contract-best-practices)
 - [Solidity idiosyncrasies](https://github.com/miguelmota/solidity-idiosyncrasies)
 - [Solidity security considerations](http://solidity.readthedocs.io/en/develop/security-considerations.html)
@@ -350,3 +351,4 @@ I've mentioned here some public audits reports for learn audits. So, lets enjoy 
 - [Decentralized Application Security Project](https://dasp.co/)
 - [Ethereum Security Guide](https://github.com/ethereum/wiki/wiki/Safety)
 - [Smart Contract Security Verification Standard](https://securing.github.io/SCSVS/)
+
