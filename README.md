@@ -350,6 +350,7 @@ I've mentioned here some public audits reports for learn audits. So, lets enjoy 
 - [Solidity security considerations](http://solidity.readthedocs.io/en/develop/security-considerations.html)
 - [Methodological security review of a smart contract](https://ethereum.stackexchange.com/questions/8551/methodological-security-review-of-a-smart-contract)
 - [Decentralized Application Security Project](https://dasp.co/)
+- [Semgrep Smart-contracts](https://github.com/Decurity/semgrep-smart-contracts)
 - [Ethereum Security Guide](https://github.com/ethereum/wiki/wiki/Safety)
 - [Smart Contract Security Verification Standard](https://securing.github.io/SCSVS/)
 
