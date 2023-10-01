@@ -353,4 +353,6 @@ I've mentioned here some public audits reports for learn audits. So, lets enjoy 
 - [Semgrep Smart-contracts](https://github.com/Decurity/semgrep-smart-contracts)
 - [Ethereum Security Guide](https://github.com/ethereum/wiki/wiki/Safety)
 - [Smart Contract Security Verification Standard](https://securing.github.io/SCSVS/)
+- [How to become a smart contract auditor | The complete roadmap 2023](https://www.cyfrin.io/blog/how-to-become-a-smart-contract-auditor)
+- [Greate Resources by cyfrin | 2023 ](https://www.cyfrin.io/blog)
 
