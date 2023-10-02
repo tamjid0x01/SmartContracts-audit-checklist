@@ -320,6 +320,7 @@ Some Platform here that you can do Smart Contracts audits and get large $ bounty
 - [HATS.FINANCE](https://hats.finance/)
 - [Immunefi](https://immunefi.com/)
 - [Sherlock](https://app.sherlock.xyz/audits/contests)
+- [codehawks](https://www.codehawks.com/)
 
 ## List of Public SmartContracts Audits Reports
 I've mentioned here some public audits reports for learn audits. So, lets enjoy reading some cool audits reports.
