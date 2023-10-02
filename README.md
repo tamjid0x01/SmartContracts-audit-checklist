@@ -322,6 +322,7 @@ Some Platform here that you can do Smart Contracts audits and get large $ bounty
 - [Sherlock](https://app.sherlock.xyz/audits/contests)
 - [codehawks](https://www.codehawks.com/)
 - [hackenproof](https://hackenproof.com/)
+- [bugrap](https://bugrap.io/)
 
 ## List of Public SmartContracts Audits Reports
 I've mentioned here some public audits reports for learn audits. So, lets enjoy reading some cool audits reports.
